@@ -414,3 +414,4 @@ html[lang="lg"] .hero h1 { font-size: clamp(30px, 3.7vw, 46px); }
 main > section.hero[data-theme] { background-image: linear-gradient(90deg, rgba(10, 17, 15, .9), rgba(10, 17, 15, .62) 55%, rgba(10, 17, 15, .45)), linear-gradient(180deg, rgba(10, 17, 15, .35), rgba(10, 17, 15, .1) 40%, rgba(10, 17, 15, .85)), url("../images/hero-aerial.jpg"); background-size: cover; background-position: center; background-attachment: scroll; background-color: var(--bg-dark); }
 .pill { white-space: nowrap; }
 @media (max-width: 560px) { .pill { padding: 0 12px; font-size: 11px; letter-spacing: .04em; } }
+.feature img { height: 80px; object-fit: cover; border-radius: 6px; }
