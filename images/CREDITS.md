@@ -3,8 +3,8 @@
 Photos from Unsplash (free to use under the Unsplash License; credit appreciated):
 
 - hero-biometrics.jpg: George Prentzas, https://unsplash.com/photos/SRFG7iwktDk
-- hero-access.jpg: Jakub Żerdzicki, https://unsplash.com/photos/pLD-QID7x3k
-- hero-network.jpg, and the fibre switch: Kirill Sh, https://unsplash.com/photos/eVWWr6nmDf8
+- hero-turnstile.jpg: Martin Leitgeb, https://unsplash.com/photos/u5Mm6I8qQC8
+- hero-servers.jpg: Domaintechnik, https://unsplash.com/photos/VHmBX7FnXw0
 - hero-pos.jpg: SumUp, https://unsplash.com/photos/AAYpF9Vx7Ek
 - brands-datacenter.jpg: İsmail Enes Ayhan, https://unsplash.com/photos/lVZjvw-u9V8
 - svc-laptop.jpg: Dell, https://unsplash.com/photos/Gi3iUJ1FwxI
