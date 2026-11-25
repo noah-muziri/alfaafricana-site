@@ -13,3 +13,11 @@ Photos from Unsplash (free to use under the Unsplash License; credit appreciated
 - svc-appliances.jpg: Franco Debartolo, https://unsplash.com/photos/AfpOZUJHfMA
 
 Photographer names come from Unsplash's listing pages; check each page for the licence and credit before launch.
+
+Why Us section (Unsplash):
+
+- why-advisory.jpg: Vitaly Gariev, https://unsplash.com/photos/OZnnv0FCA6Y
+- why-support.jpg: Petr Macháček, https://unsplash.com/photos/BeVGrXEktIk
+- why-globe.jpg: Kyle Glenn, https://unsplash.com/photos/nXt5HtLmlgE
+- why-claims.jpg: Jakub Żerdzicki, https://unsplash.com/photos/QI6NLgN5XnM
+- why-sourcing.jpg: CHUTTERSNAP, https://unsplash.com/photos/BNBA1h-NgdY

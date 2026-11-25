@@ -38,8 +38,16 @@
   L.mark.forEach(function (l) {
     if (!l.hole) markShape = new THREE.Shape(l.pts.map(toV));
   });
+  // the traced counter of the "a" came out lopsided (a sloping top edge); redraw it as a clean rounded rectangle on the same bounds
+  function cleanHole(pts) {
+    var x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    pts.forEach(function (p) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); });
+    var r = Math.min(x1 - x0, y1 - y0) * 0.38, out = [], n = 10, c = [[x1 - r, y0 + r, -90], [x1 - r, y1 - r, 0], [x0 + r, y1 - r, 90], [x0 + r, y0 + r, 180]];
+    c.forEach(function (q) { for (var i = 0; i <= n; i++) { var a = (q[2] + 90 * i / n) * Math.PI / 180; out.push([q[0] + r * Math.cos(a), q[1] + r * Math.sin(a)]); } });
+    return out;
+  }
   L.mark.forEach(function (l) {
-    if (l.hole && markShape) markShape.holes.push(new THREE.Path(l.pts.map(toV)));
+    if (l.hole && markShape) markShape.holes.push(new THREE.Path(cleanHole(l.pts).map(toV)));
   });
 
   var markGeo = new THREE.ExtrudeGeometry(markShape, {
