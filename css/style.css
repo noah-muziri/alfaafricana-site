@@ -502,3 +502,4 @@ html.menu-open .lang button:not(.on) { color: #fff; }
   .menubtn { width: 40px; height: 40px; } .menubtn span:nth-child(1) { top: 14px; right: 9px; } .menubtn span:nth-child(2) { top: 23px; left: 9px; }
   .lang button { height: 30px; padding: 0 7px; }
 }
+@media (max-width: 640px) { .brand__t { display: none; } }
