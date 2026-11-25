@@ -211,7 +211,7 @@
     var intro = reduce ? 1 : 1 - Math.pow(1 - Math.min(1, t / 1700), 3);
     var a = reduce ? 0 : window.scrollY * 0.0026 + (1 - intro) * Math.PI * 1.6;
     var spin = a - 0.72 * Math.sin(a);                  // lingers face-on, then whips round
-    var sway = reduce ? -0.3 : 0.26 * Math.sin(t / 1400);
+    var sway = reduce ? -0.3 : 0.12 * Math.sin(t / 1400);
     cur.tx += ((reduce ? 0 : px) * 0.35 - cur.tx) * 0.06;
     cur.ty += ((reduce ? 0 : py) * 0.22 - cur.ty) * 0.06;
 
@@ -220,7 +220,7 @@
     var scale = (cur.w / LOGO_W) * (0.72 + 0.28 * intro);
     rig.position.set(cur.x - vw / 2, vh / 2 - cur.y + (reduce ? 0 : Math.sin(t / 1100) * 5), 0);
     rig.scale.setScalar(scale);
-    logo.rotation.set(0.1 + cur.ty + (reduce ? 0 : 0.05 * Math.sin(t / 1700)), spin + sway + cur.tx, 0);
+    logo.rotation.set(0.02 + cur.ty + (reduce ? 0 : 0.02 * Math.sin(t / 1700)), spin + sway + cur.tx, 0);
 
     textMat.color.copy(INK).lerp(WHITE, cur.dark);
     faceMat.opacity = sideMat.opacity = textMat.opacity = cur.o;
