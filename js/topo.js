@@ -46,6 +46,6 @@
   }
 
   var root = document.documentElement.style;
-  root.setProperty('--topo-light', render('rgba(18, 32, 29, 0.10)', 1.5));
+  root.setProperty('--topo-light', render('rgba(10, 16, 32, 0.10)', 1.5));
   root.setProperty('--topo-dark', render('rgba(255, 255, 255, 0.075)', 1.5));
 })();

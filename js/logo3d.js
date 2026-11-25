@@ -24,7 +24,7 @@
     renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   } catch (e) { return fallback(); }
 
-  var BLUE = 0x2d9bcd, TEAL = 0x4fd2c2, INK = new THREE.Color(0x1b2430), WHITE = new THREE.Color(0xffffff);
+  var BLUE = 0x0099cb, TEAL = 0x35b6e6, INK = new THREE.Color(0x0a1020), WHITE = new THREE.Color(0xffffff);
 
   /* ---------- geometry ---------- */
   var tb = L.textBox;                                   // wordmark box in logo pixels
@@ -111,7 +111,7 @@
 
   // matte powder-coated finish: soft blue face, teal edges, flat lettering
   var faceMat = new THREE.MeshPhysicalMaterial({ color: lin(BLUE), metalness: 0.0, roughness: 0.88, clearcoat: 0, envMapIntensity: 0.42, transparent: true });
-  var sideMat = new THREE.MeshStandardMaterial({ color: lin(0x2fb3a6), metalness: 0.05, roughness: 0.82, envMapIntensity: 0.5, transparent: true });
+  var sideMat = new THREE.MeshStandardMaterial({ color: lin(0x0b7fa8), metalness: 0.05, roughness: 0.82, envMapIntensity: 0.5, transparent: true });
   var textMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0.0, roughness: 0.85, clearcoat: 0, envMapIntensity: 0.55, transparent: true });
 
   // procedural photo-studio: a dark room with soft boxes, baked into a reflection map
