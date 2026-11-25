@@ -29,7 +29,7 @@
     'ALFA Group established': 'ALFA Group yatandikibwawo', 'Branches': 'Amatabi', 'Languages served': 'Ennimi ze tuweereza',
     'Global brands distributed': 'Ba brand ab’ensi yonna be tugaba',
     'Perfect Equipment': 'Ebyuma Ebituukiridde',
-    'We partner with over 5,000 hardware, software and cloud providers to ensure that your business is fast, efficiently and cost-effective.':
+    'We partner with over 5,000 hardware, software and cloud providers to ensure that your business is fast, efficient and cost-effective.':
       'Tukolagana n’abagaba hardware, software ne cloud abasoba 5,000 okukakasa nti bizinensi yo etambula bwangu, bulungi era ku bbeeyi ennungi.',
     'Fantastic Service': 'Obuweereza Obw’ekitalo',
     'Our global network means that we’ll be here to help scale your business and drive innovation no matter your long-term goals.':
@@ -93,11 +93,11 @@
       'Alfa Africana eyeekenneenya mu kuwa obuweereza bwa IT obukoleddwa ng’omuntu bw’ayagala, nga mwotwalidde managed services, eby’okugonjoola bya IT ebya kampuni, n’eby’obukuumi ebikozesa AI. Tukolagana kumpi ne bakasitoma baffe okutuukiriza ebyetaago byabwe eby’enjawulo, nga tukakasa eby’okugonjoola ebikola obulungi, ebyobukuumi era ebiyinza okugaziwa.',
     'We are an authorized distributor and retail supplier of leading IT brands, offering a wide range of hardware products to support both enterprise and small business needs. Our extensive inventory covers everything from networking equipment to advanced security devices.':
       'Tuli bagabi abakkirizibbwa era abatunda ba brand za IT ez’oku mwanjo, nga tuwa ebyuma bingi okuyamba bizinensi ennene n’entono. Ebintu byaffe bingi nnyo, okuva ku byuma bya networking okutuuka ku byuma by’obukuumi eby’omulembe.',
-    'Laptops, Desktops & Accessories': 'Laptops, Desktops n’Ebikozesebwa', 'IT Hardwares & Networking Solution': 'IT Hardware n’Eby’okugonjoola bya Networking',
+    'Laptops, Desktops & Accessories': 'Laptops, Desktops n’Ebikozesebwa', 'IT Hardware & Networking Solutions': 'IT Hardware n’Eby’okugonjoola bya Networking',
     'quickly, affordably and always on time.': 'mu bwangu, ku bbeeyi ennungi era buli kiseera ku ssaawa.',
     'Our team is made up of top IT professionals who can solve your toughest IT challenges': 'Ttiimu yaffe erimu abakugu ba IT abasingayo abayinza okugonjoola ebizibu byo ebikalubo',
     'Leading IT experts': 'Abakugu ba IT abakulembeze',
-    'Cyber Securities & Application Development': 'Obukuumi bwa Cyber n’Okukola Applications', 'Home & Office Appliances - Retail Sales': 'Ebyuma by’awaka ne ofiisi - Okutunda',
+    'Cybersecurity & Application Development': 'Obukuumi bwa Cyber n’Okukola Applications', 'Home & Office Appliances - Retail Sales': 'Ebyuma by’awaka ne ofiisi - Okutunda',
     'Our expertise in telecommunications and network infrastructure allows us to deliver robust, reliable, and future-ready solutions that ensure seamless connectivity and communication for businesses of all sizes.':
       'Obukugu bwaffe mu by’essimu ne network infrastructure butusobozesa okuleeta eby’okugonjoola ebikakamu, ebyesigwa era ebiteekeddwateekeddwa eby’omu maaso, ebikakasa okuyungibwa n’empuliziganya etaliimu kutaataaganyizibwa eri bizinensi zonna.',
     'As security concerns rise globally, we leverage AI to provide sophisticated and adaptable security solutions. From advanced surveillance to predictive analytics, we help organizations protect their assets and operations with intelligent technology.':
@@ -108,10 +108,10 @@
 
     /* why us */
     'Why Us': 'Lwaki Ffe',
-    'When you choose to partner with a company like us, you get a highly efficient team with host of business benefits. Also you can embrace the future with confidence.':
+    'When you choose to partner with a company like us, you get a highly efficient team with a host of business benefits. Also you can embrace the future with confidence.':
       'Bw’olonda okukolagana ne kampuni nga ffe, afuna ttiimu ey’obukugu obw’amaanyi n’emigaso mingi eri bizinensi. Era osobola okwaniriza eby’omu maaso n’obwesige.',
     'Free Advisory & Estimate Survey': 'Okuteesa n’Okubalirira ku Bwereere', 'Online Help and Support': 'Obuyambi ku Mutimbagano',
-    'We Serve in 7 Global Language': 'Tuweereza mu Nnimi 7 ez’Ensi Yonna', 'One Day Process for Guarantee Claims': 'Okuddamu Okusaba Okuddaabiriza mu Lunaku Lumu',
+    'We Serve in 7 Global Languages': 'Tuweereza mu Nnimi 7 ez’Ensi Yonna', 'One Day Process for Guarantee Claims': 'Okuddamu Okusaba Okuddaabiriza mu Lunaku Lumu',
     'Free Sourcing for Unavailable Products': 'Okunoonya Ebintu Ebitaliwo ku Bwereere',
 
     /* contact + footer */
@@ -123,7 +123,8 @@
     'Submit': 'Weereza', 'All Rights Reserved.': 'Eddembe Lyonna Likuumibwa.', 'by': 'okuva ku',
     'Company': 'Kampuni', 'Support': 'Obuyambi', 'Help Center': 'Ekifo ky’Obuyambi', 'More Links': 'Ebirala', 'Feedback': 'Endowooza',
     'Please enter your name and a valid email.': 'Nsaba wandiike erinnya lyo ne email entuufu.', 'Opening your email app…': 'Tuggulawo email yo…',
-    'Menu': 'Menu', 'Language': 'Olulimi'
+    'Explore': 'Funoona', 'Master Distributor of ZKTeco and Distributor of ASSA ABLOY, serving businesses across Uganda since the ALFA Group began in 1970.': 'Omugabi Omukulu owa ZKTeco era Omugabi owa ASSA ABLOY, aweereza bizinensi mu Uganda okuva ALFA Group lwe yatandika mu 1970.', 'Alfa Africana. All rights reserved.': 'Alfa Africana. Eddembe lyonna likuumibwa.',
+    'Skip to content': 'Simbuka ogende ku biri munda', 'Menu': 'Menu', 'Language': 'Olulimi'
   };
 
   var ATTRS = ['placeholder', 'aria-label', 'alt'];

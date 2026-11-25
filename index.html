@@ -14,9 +14,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1795634051">
+  <link rel="preload" as="image" href="images/hero-aerial.jpg">
+  <link rel="stylesheet" href="css/style.css?v=1795636447">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alfa Africana","description":"Master distributor of ZKTeco and distributor of ASSA ABLOY; IT services and hardware in Kampala, Uganda. Part of the ALFA Group, established 1970.","telephone":"+256750500102","email":"info@alfaafricana.com","address":{"@type":"PostalAddress","streetAddress":"The Prism building, B-13 Kampala Road","addressLocality":"Kampala","addressCountry":"UG"}}</script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <!-- Product illustrations (original artwork, used by the catalogue) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
@@ -223,7 +226,7 @@
     <a href="#contact"><b>Free site survey</b><span>Advisory &amp; estimate</span></a>
   </aside>
 
-  <main>
+  <main id="main">
     <!-- Hero -->
     <section class="hero" id="home" data-theme="dark">
       <div class="wrap hero__grid">
@@ -287,7 +290,7 @@
         <article class="feature reveal">
           <img src="images/perfect.png" alt="" width="200" height="132" loading="lazy">
           <h3>Perfect Equipment</h3>
-          <p>We partner with over 5,000 hardware, software and cloud providers to ensure that your business is fast, efficiently and cost-effective.</p>
+          <p>We partner with over 5,000 hardware, software and cloud providers to ensure that your business is fast, efficient and cost-effective.</p>
         </article>
         <article class="feature reveal">
           <img src="images/service.png" alt="" width="200" height="132" loading="lazy">
@@ -427,12 +430,12 @@
         </div>
         <div class="scatter">
           <figure class="sc sc--a reveal"><figcaption><span>01</span>Laptops, Desktops &amp; Accessories</figcaption><div class="sc__img"><img src="images/svc-laptop.jpg" alt="Laptop on a desk" width="599" height="421" loading="lazy"></div></figure>
-          <figure class="sc sc--b reveal"><figcaption><span>02</span>IT Hardwares &amp; Networking Solution</figcaption><div class="sc__img"><img src="images/svc-rack.jpg" style="object-position:50% 25%" alt="Network equipment rack" width="599" height="421" loading="lazy"></div></figure>
+          <figure class="sc sc--b reveal"><figcaption><span>02</span>IT Hardware &amp; Networking Solutions</figcaption><div class="sc__img"><img src="images/svc-rack.jpg" style="object-position:50% 25%" alt="Network equipment rack" width="599" height="421" loading="lazy"></div></figure>
           <blockquote class="sc sc--q reveal">
             <p>Our team is made up of top IT professionals who can solve your toughest IT challenges <em>quickly, affordably and always on time.</em></p>
             <footer><span class="sc__mark"><img src="images/alfa-logo.png" alt="" width="181" height="75"></span>Leading IT experts</footer>
           </blockquote>
-          <figure class="sc sc--c reveal"><figcaption><span>03</span>Cyber Securities &amp; Application Development</figcaption><div class="sc__img"><img src="images/svc-security.jpg" alt="Padlock on a laptop keyboard" width="599" height="421" loading="lazy"></div></figure>
+          <figure class="sc sc--c reveal"><figcaption><span>03</span>Cybersecurity &amp; Application Development</figcaption><div class="sc__img"><img src="images/svc-security.jpg" alt="Padlock on a laptop keyboard" width="599" height="421" loading="lazy"></div></figure>
           <figure class="sc sc--d reveal"><figcaption><span>04</span>Home &amp; Office Appliances - Retail Sales</figcaption><div class="sc__img"><img src="images/svc-appliances.jpg" style="object-position:50% 60%" alt="Modern kitchen with appliances" width="599" height="421" loading="lazy"></div></figure>
         </div>
         <div class="cols reveal">
@@ -459,12 +462,12 @@
       <div class="wrap">
         <div class="head reveal">
           <h2 class="title">Why Us</h2>
-          <p>When you choose to partner with a company like us, you get a highly efficient team with host of business benefits. Also you can embrace the future with confidence.</p>
+          <p>When you choose to partner with a company like us, you get a highly efficient team with a host of business benefits. Also you can embrace the future with confidence.</p>
         </div>
         <div class="benefits">
           <article class="benefit reveal"><img src="images/why-advisory.jpg" alt="Two colleagues reviewing charts over a laptop" width="150" height="80" loading="lazy"><h3>Free Advisory &amp; Estimate Survey</h3></article>
           <article class="benefit reveal"><img src="images/why-support.jpg" alt="Support headset beside a laptop" width="150" height="80" loading="lazy"><h3>Online Help and Support</h3></article>
-          <article class="benefit reveal"><img src="images/why-globe.jpg" alt="Globe showing Africa and Asia" width="150" height="80" loading="lazy"><h3>We Serve in 7 Global Language</h3></article>
+          <article class="benefit reveal"><img src="images/why-globe.jpg" alt="Globe showing Africa and Asia" width="150" height="80" loading="lazy"><h3>We Serve in 7 Global Languages</h3></article>
           <article class="benefit reveal"><img src="images/why-claims.jpg" alt="Hand signing a claim document" width="150" height="80" loading="lazy"><h3>One Day Process for Guarantee Claims</h3></article>
           <article class="benefit reveal"><img src="images/why-sourcing.jpg" alt="Warehouse shelving with stocked pallets" width="150" height="80" loading="lazy"><h3>Free Sourcing for Unavailable Products</h3></article>
         </div>
@@ -500,40 +503,37 @@
     <div class="wrap footer__grid">
       <div>
         <img class="footer__logo" src="images/alfa-logo.png" alt="Alfa Africana" width="181" height="75">
-        <p class="footer__copy">&copy; <span id="year">2026</span> All Rights Reserved.<br>by <a href="#home">ALFA AFRICANA</a></p>
+        <p class="footer__about">Master Distributor of ZKTeco and Distributor of ASSA ABLOY, serving businesses across Uganda since the ALFA Group began in 1970.</p>
       </div>
       <div>
-        <h3>About</h3>
+        <h3>Explore</h3>
         <ul>
-          <li><a href="#home">Company</a></li>
-          <li><a href="#contact">Contact Us</a>
-            <p>The Prism building, B-13 Kampala Road, Kampala, Uganda<br>Phone: +256 750 500 102<br>Email: info@alfaafricana.com</p></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#catalogue">Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h3>Support</h3>
+        <h3>Contact</h3>
         <ul>
-          <li><a href="#contact">Help Center</a>
-            <p>The Prism building, B-13 Kampala Road, Kampala, Uganda<br>Phone: +256 750 500 102<br>Email: info@alfaafricana.com</p></li>
-        </ul>
-      </div>
-      <div>
-        <h3>More Links</h3>
-        <ul>
-          <li><a href="mailto:info@alfaafricana.com">Feedback</a>
-            <p>info@alfaafricana.com</p></li>
+          <li>The Prism building, B-13 Kampala Road,<br>Kampala, Uganda</li>
+          <li><a href="tel:+256750500102">+256 750 500 102</a></li>
+          <li><a href="mailto:info@alfaafricana.com">info@alfaafricana.com</a></li>
         </ul>
       </div>
     </div>
+    <div class="wrap footer__legal"><p>&copy; <span id="year">2026</span> Alfa Africana. All rights reserved.</p></div>
   </footer>
 
   <canvas id="logo3d" aria-hidden="true"></canvas>
 
-  <script src="js/topo.js?v=1795634051"></script>
+  <script src="js/topo.js?v=1795636447"></script>
   <script src="vendor/three.min.js"></script>
-  <script src="js/logo-path.js?v=1795634051"></script>
-  <script src="js/logo3d.js?v=1795634051"></script>
-  <script src="js/main.js?v=1795634051"></script>
-  <script src="js/i18n.js?v=1795634051"></script>
+  <script src="js/logo-path.js?v=1795636447"></script>
+  <script src="js/logo3d.js?v=1795636447"></script>
+  <script src="js/main.js?v=1795636447"></script>
+  <script src="js/i18n.js?v=1795636447"></script>
 </body>
 </html>
