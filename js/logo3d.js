@@ -65,7 +65,16 @@
   }
   var h = T / 2;
   var LETTERS = {
-    A: { a: 0.95, f: function (a) { return [seg(0.07, 0.03, a / 2, 0.98), seg(a - 0.07, 0.03, a / 2, 0.98), seg(a * 0.27, 0.3, a * 0.73, 0.3)]; } },
+    A: { a: 0.95, f: function (a) {
+      // legs are cut flat on the baseline and flat across the apex (stroked legs left slanted ends)
+      var w = T * 1.12, x0 = 0.03, m = a / 2, inX = function (y) { return x0 + w + (m + w / 2 - x0 - w) * y; };
+      var yb = 0.3, l = inX(yb) - 0.03, r = a - inX(yb) + 0.03;
+      return [
+        [[x0, 0], [x0 + w, 0], [m + w / 2, 1], [m - w / 2, 1]],
+        [[a - x0 - w, 0], [a - x0, 0], [m + w / 2, 1], [m - w / 2, 1]],
+        [[l, yb - T * 0.4], [r, yb - T * 0.4], [r, yb + T * 0.4], [l, yb + T * 0.4]]
+      ];
+    } },
     L: { a: 0.62, f: function (a) { return [seg(h, 0, h, 1), seg(0, h, a, h)]; } },
     F: { a: 0.62, f: function (a) { return [seg(h, 0, h, 1), seg(0, 1 - h, a, 1 - h), seg(0, 0.53, a * 0.86, 0.53)]; } },
     I: { a: 0.2, f: function () { return [seg(h, 0, h, 1)]; } },
