@@ -35,9 +35,26 @@
   function toV(p) { return new THREE.Vector2(p[0] - cx, cy - p[1]); }
 
   var markShape = null;
-  L.mark.forEach(function (l) {
-    if (!l.hole) markShape = new THREE.Shape(l.pts.map(toV));
-  });
+  /* The traced outline of the mark came out faceted and wobbly, so the outer edge is redrawn from a sparse,
+     hand-placed set of points (read off the traced logo, in 1/14-unit steps) and smoothed with Chaikin corner cutting. */
+  var MARK_PX = [[92,270],[100,220],[130,170],[185,115],[250,80],[320,48],[390,35],[500,36],[570,52],[640,90],[700,118],
+    [760,85],[830,55],[915,35],[1020,36],[1080,55],[1160,95],[1250,150],[1300,240],[1308,370],[1280,440],[1230,490],[1170,520],
+    [1145,548],[1190,585],[1250,630],[1290,672],[1295,730],[1250,772],[1185,774],[1100,712],[1020,655],[940,595],[880,545],
+    [862,520],[880,475],[935,445],[1010,428],[1100,395],[1140,330],[1135,290],[1100,225],[1030,190],[890,188],[830,225],
+    [795,270],[790,690],[770,740],[740,760],[665,758],[625,735],[560,745],[500,757],[390,762],[315,748],[250,715],[185,678],
+    [130,610],[100,560],[92,525],[90,400]];
+  function chaikin(pts, rounds) {
+    for (var r = 0; r < rounds; r++) {
+      var out = [];
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i], q = pts[(i + 1) % pts.length];
+        out.push([p[0] * 0.75 + q[0] * 0.25, p[1] * 0.75 + q[1] * 0.25], [p[0] * 0.25 + q[0] * 0.75, p[1] * 0.25 + q[1] * 0.75]);
+      }
+      pts = out;
+    }
+    return pts;
+  }
+  markShape = new THREE.Shape(chaikin(MARK_PX.map(function (p) { return [p[0] / 14 + 40, p[1] / 14 - 2]; }), 4).map(toV));
   // the traced counter of the "a" came out lopsided (a sloping top edge); redraw it as a clean rounded rectangle on the same bounds
   function cleanHole(pts) {
     var x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
@@ -96,13 +113,16 @@
     ' ': { a: 0.42, f: function () { return []; } }
   };
   var TEXT = 'ALFA AFRICANA', GAP = 0.16;
+  // optical kerning for the pairs that looked loose or crowded
+  var KERN = { FA: -0.07, 'A ': -0.04, ' A': -0.04, RI: 0.05, IC: 0.02, CA: -0.03, LF: 0.0, AF: 0.0 };
+  function gapAt(i) { return i ? GAP + (KERN[TEXT[i - 1] + TEXT[i]] || 0) : 0; }
   var units = 0;
-  TEXT.split('').forEach(function (ch, i) { units += LETTERS[ch].a + (i ? GAP : 0); });
+  TEXT.split('').forEach(function (ch, i) { units += LETTERS[ch].a + gapAt(i); });
   var kx = (tb[2] - tb[0]) / (units * H);               // horizontal fit to the original wordmark width
   var textShapes = [], ox = 0;
   TEXT.split('').forEach(function (ch, i) {
     var def = LETTERS[ch];
-    if (i) ox += GAP;
+    ox += gapAt(i);
     def.f(def.a).forEach(function (poly) {
       textShapes.push(new THREE.Shape(poly.map(function (p) {
         return new THREE.Vector2(tb[0] - cx + (ox + p[0]) * kx * H, (cy - tb[3]) + p[1] * H);
