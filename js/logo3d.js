@@ -42,7 +42,7 @@
   function cleanHole(pts) {
     var x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
     pts.forEach(function (p) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); });
-    var r = Math.min(x1 - x0, y1 - y0) * 0.38, out = [], n = 10, c = [[x1 - r, y0 + r, -90], [x1 - r, y1 - r, 0], [x0 + r, y1 - r, 90], [x0 + r, y0 + r, 180]];
+    var r = Math.min(x1 - x0, y1 - y0) * 0.38, out = [], n = 24, c = [[x1 - r, y0 + r, -90], [x1 - r, y1 - r, 0], [x0 + r, y1 - r, 90], [x0 + r, y0 + r, 180]];
     c.forEach(function (q) { for (var i = 0; i <= n; i++) { var a = (q[2] + 90 * i / n) * Math.PI / 180; out.push([q[0] + r * Math.cos(a), q[1] + r * Math.sin(a)]); } });
     return out;
   }
@@ -52,7 +52,7 @@
 
   var markGeo = new THREE.ExtrudeGeometry(markShape, {
     depth: 15, steps: 1, curveSegments: 1,
-    bevelEnabled: true, bevelThickness: 2.6, bevelSize: 1.9, bevelOffset: -1.9, bevelSegments: 10
+    bevelEnabled: true, bevelThickness: 0.9, bevelSize: 0.4, bevelOffset: -0.4, bevelSegments: 3
   });
   markGeo.translate(0, 0, -7.5);
 
