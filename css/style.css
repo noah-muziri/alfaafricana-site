@@ -10,7 +10,7 @@
   --bg-light: #f6f5f0;
   --bg-tint: #ecebe3;
   --bg-dark: #101a18;
-  --serif: "Instrument Serif", Georgia, serif;
+  --serif: "Plus Jakarta Sans", system-ui, sans-serif;
   --fg: var(--ink);
   --nav-h: 80px;
 }
@@ -20,7 +20,7 @@ html.on-dark, html.menu-open { --fg: #fff; }
 html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
 body {
   margin: 0;
-  font: 400 16px/1.8 Montserrat, Arial, sans-serif;
+  font: 400 16px/1.8 "Plus Jakarta Sans", system-ui, sans-serif;
   color: var(--text);
   background: var(--bg-light);
   -webkit-font-smoothing: antialiased;
@@ -37,7 +37,7 @@ h1, h2, h3 { color: var(--ink); margin: 0; font-weight: 700; line-height: 1.25; 
   display: inline-block; border: 0; cursor: pointer;
   background: var(--teal); color: #fff;
   padding: 14px 34px; border-radius: 40px;
-  font: 600 13px/1 Montserrat, sans-serif; letter-spacing: .14em; text-transform: uppercase;
+  font: 600 13px/1 "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase;
   transition: background .25s, transform .25s, box-shadow .25s;
 }
 .btn:hover { background: var(--teal-d); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(79, 210, 194, .4); }
@@ -79,7 +79,7 @@ html.on-dark .nav__links a:hover, html.on-dark .nav__links a.active { color: var
 .overlay__inner { min-height: 100%; display: grid; grid-template-columns: 1.3fr .7fr; gap: 56px; align-items: center; padding: 110px 7vw 56px; }
 .overlay__nav a { display: flex; align-items: baseline; gap: 20px; font: 400 clamp(38px, min(7.6vw, 10.4vh), 104px)/1.04 var(--serif); letter-spacing: -.01em; color: #fff; padding: 2px 0; opacity: 0; transform: translateY(40px); transition: opacity .6s, transform .6s cubic-bezier(.2, .7, .2, 1), color .25s, padding .3s; }
 .menu-open .overlay__nav a { opacity: 1; transform: none; transition-delay: calc(.25s + var(--i) * .06s), calc(.25s + var(--i) * .06s), 0s, 0s; }
-.overlay__nav a small { font: 700 11px/1 Montserrat, sans-serif; letter-spacing: .2em; color: var(--teal); }
+.overlay__nav a small { font: 700 11px/1 "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: .2em; color: var(--teal); }
 .overlay__nav a:hover, .overlay__nav a.active { color: var(--teal); padding-left: 18px; }
 .overlay__side { font-size: 15px; color: rgba(255, 255, 255, .72); }
 .overlay__side a:hover { color: var(--teal); }
@@ -204,7 +204,7 @@ html.on-dark .dock { background: rgba(16, 26, 24, .7); }
 .badges { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 34px 0 0; padding: 0; }
 .badges li { font-size: 12px; letter-spacing: .06em; color: var(--ink); background: #fff; border: 1px solid var(--line); padding: 10px 16px; border-radius: 40px; box-shadow: 0 6px 18px rgba(27, 36, 48, .06); }
 .badges b { color: var(--teal-d); text-transform: uppercase; letter-spacing: .14em; font-size: 10.5px; margin-right: 6px; }
-.clients__word { font: 800 19px/1 Montserrat, sans-serif; letter-spacing: .16em; color: #7d8794; opacity: .75; transition: .3s; }
+.clients__word { font: 800 19px/1 "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: .16em; color: #7d8794; opacity: .75; transition: .3s; }
 .clients__word:hover { color: var(--blue); opacity: 1; }
 
 /* Partners */
@@ -310,7 +310,7 @@ main > section[data-theme="dark"] { background-color: var(--bg-dark); background
 /* Marquee band that speeds up with your scroll */
 .marquee { overflow: hidden; padding: 26px 0; border-top: 1px solid var(--line); position: relative; z-index: 2; }
 .marquee__track { display: flex; align-items: center; gap: 44px; width: max-content; white-space: nowrap; will-change: transform; }
-.marquee__track span { font: 700 clamp(26px, 3.6vw, 48px)/1 Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .02em; color: var(--ink); }
+.marquee__track span { font: 700 clamp(26px, 3.6vw, 48px)/1 "Plus Jakarta Sans", system-ui, sans-serif; text-transform: uppercase; letter-spacing: .02em; color: var(--ink); }
 .marquee__track span:nth-of-type(even) { font: italic 400 clamp(30px, 4.2vw, 56px)/1 var(--serif); text-transform: none; letter-spacing: 0; color: var(--teal-d); }
 .marquee__track i { font-style: normal; font-size: clamp(22px, 3vw, 40px); color: var(--teal); }
 
@@ -404,7 +404,7 @@ main > section[data-theme="dark"] { background-color: var(--bg-dark); background
 
 /* language switch */
 .lang { display: inline-flex; padding: 3px; border-radius: 12px; border: 1.5px solid var(--fg); pointer-events: auto; }
-.lang button { font: 700 11px/1 Montserrat, sans-serif; letter-spacing: .1em; color: var(--fg); background: transparent; border: 0; padding: 0 11px; height: 38px; border-radius: 9px; cursor: pointer; transition: background .25s, color .25s; }
+.lang button { font: 700 11px/1 "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: .1em; color: var(--fg); background: transparent; border: 0; padding: 0 11px; height: 38px; border-radius: 9px; cursor: pointer; transition: background .25s, color .25s; }
 .lang button:hover { background: rgba(127, 127, 127, .16); }
 .lang button.on { background: var(--teal); color: #07322d; }
 @media (max-width: 560px) { .lang button { padding: 0 8px; height: 34px; } .lang { padding: 2px; } .nav__right { gap: 6px; } .nav__inner { padding-inline: 14px; } }
@@ -416,3 +416,19 @@ main > section.hero[data-theme] { background-image: linear-gradient(90deg, rgba(
 @media (max-width: 560px) { .pill { padding: 0 12px; font-size: 11px; letter-spacing: .04em; } }
 .feature img { height: 80px; object-fit: cover; border-radius: 6px; }
 .benefit img { aspect-ratio: 16 / 10; }
+
+/* Type: one modern family (Plus Jakarta Sans). Display text is set heavier and tighter than the old serif. */
+body { letter-spacing: 0; word-spacing: .04em; }
+.hero h1 { font-weight: 800; letter-spacing: -.035em; line-height: 1.06; }
+.hero h1 em, .display em, .sc--q em { font-style: italic; font-weight: 600; letter-spacing: -.03em; }
+.hero h1 em { font-size: 1em; }
+.display, .jintro__lead, .sc--q p { font-weight: 700; letter-spacing: -.035em; line-height: 1.12; }
+.display { font-size: clamp(28px, 3.3vw, 46px); }
+.jintro__lead { font-size: clamp(26px, 3vw, 40px); }
+.sc--q p { font-size: clamp(24px, 2.5vw, 34px); }
+.partner__name, .chapter__head h3, .overlay__big { font-weight: 700; letter-spacing: -.035em; }
+.chapter__head h3 { font-size: clamp(30px, 3.3vw, 46px); }
+.overlay__nav a { font-weight: 600; letter-spacing: -.035em; }
+.counter__num, .facts b { font-weight: 700; letter-spacing: -.04em; }
+.marquee__track span:nth-of-type(even) { font-weight: 600; letter-spacing: -.02em; }
+html[lang="lg"] .hero h1 { font-size: clamp(28px, 3.4vw, 42px); }
