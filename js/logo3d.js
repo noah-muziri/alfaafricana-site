@@ -20,7 +20,7 @@
 
   var renderer;
   try {
-    if (!window.THREE || !L) throw 0;
+    if (!window.THREE || !L || !window.ALFA_FONT) throw 0;
     renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   } catch (e) { return fallback(); }
 
@@ -73,66 +73,32 @@
   });
   markGeo.translate(0, 0, -7.5);
 
-  // wordmark: monoline capitals drawn from strokes, laid out inside the original text box
-  var H = tb[3] - tb[1], T = 0.19;
-  function seg(x1, y1, x2, y2) {
-    var dx = x2 - x1, dy = y2 - y1, n = Math.hypot(dx, dy), nx = -dy / n * T / 2, ny = dx / n * T / 2;
-    return [[x1 + nx, y1 + ny], [x2 + nx, y2 + ny], [x2 - nx, y2 - ny], [x1 - nx, y1 - ny]];
-  }
-  function arc(ox, oy, r, a0, a1) {
-    var o = [], i = [], n = 28, k;
-    for (k = 0; k <= n; k++) {
-      var a = a0 + (a1 - a0) * k / n, c = Math.cos(a), s = Math.sin(a);
-      o.push([ox + (r + T / 2) * c, oy + (r + T / 2) * s]);
-      i.unshift([ox + (r - T / 2) * c, oy + (r - T / 2) * s]);
-    }
-    return o.concat(i);
-  }
-  var h = T / 2;
-  var LETTERS = {
-    A: { a: 0.95, f: function (a) {
-      // legs are cut flat on the baseline and flat across the apex (stroked legs left slanted ends)
-      var w = T * 1.12, x0 = 0.03, m = a / 2, inX = function (y) { return x0 + w + (m + w / 2 - x0 - w) * y; };
-      var yb = 0.3, l = inX(yb) - 0.03, r = a - inX(yb) + 0.03;
-      return [
-        [[x0, 0], [x0 + w, 0], [m + w / 2, 1], [m - w / 2, 1]],
-        [[a - x0 - w, 0], [a - x0, 0], [m + w / 2, 1], [m - w / 2, 1]],
-        [[l, yb - T * 0.4], [r, yb - T * 0.4], [r, yb + T * 0.4], [l, yb + T * 0.4]]
-      ];
-    } },
-    L: { a: 0.62, f: function (a) { return [seg(h, 0, h, 1), seg(0, h, a, h)]; } },
-    F: { a: 0.62, f: function (a) { return [seg(h, 0, h, 1), seg(0, 1 - h, a, 1 - h), seg(0, 0.53, a * 0.86, 0.53)]; } },
-    I: { a: 0.2, f: function () { return [seg(h, 0, h, 1)]; } },
-    N: { a: 0.8, f: function (a) { return [seg(h, 0, h, 1), seg(a - h, 0, a - h, 1), seg(h, 0.97, a - h, 0.03)]; } },
-    C: { a: 0.86, f: function (a) { return [arc(a / 2, 0.5, 0.5 - h, 0.72, 2 * Math.PI - 0.72)]; } },
-    R: { a: 0.74, f: function (a) {
-      var bx = a - 0.27, r = 0.275 - h;
-      return [seg(h, 0, h, 1), seg(0, 1 - h, bx, 1 - h), seg(0, 0.45 + h, bx, 0.45 + h),
-              arc(bx, 0.725, r, -Math.PI / 2, Math.PI / 2), seg(a * 0.45, 0.46, a - 0.04, 0.02)];
-    } },
-    ' ': { a: 0.42, f: function () { return []; } }
-  };
-  var TEXT = 'ALFA AFRICANA', GAP = 0.16;
-  // optical kerning for the pairs that looked loose or crowded
-  var KERN = { FA: -0.07, 'A ': -0.04, ' A': -0.04, RI: 0.05, IC: 0.02, CA: -0.03, LF: 0.0, AF: 0.0 };
-  function gapAt(i) { return i ? GAP + (KERN[TEXT[i - 1] + TEXT[i]] || 0) : 0; }
+  // wordmark: real Montserrat Medium outlines, widely tracked like the Alfa Royal lettering, fitted to the original text box
+  var F = window.ALFA_FONT, CAP = F.cap, TEXT = 'ALFA AFRICANA';
+  var TRACK = 0.3, SPACE = 0.42;                          // in cap-heights
+  var KERN = { FA: -0.05, 'A ': -0.05, ' A': -0.05, LF: 0, AF: 0 };
+  function advOf(ch) { return ch === ' ' ? SPACE : F.glyphs[ch].adv / CAP; }
+  function gapAt(i) { return i ? TRACK + (KERN[TEXT[i - 1] + TEXT[i]] || 0) : 0; }
   var units = 0;
-  TEXT.split('').forEach(function (ch, i) { units += LETTERS[ch].a + gapAt(i); });
-  var kx = (tb[2] - tb[0]) / (units * H);               // horizontal fit to the original wordmark width
+  TEXT.split('').forEach(function (ch, i) { units += advOf(ch) + gapAt(i); });
+  var capPx = (tb[2] - tb[0]) / units;                     // cap height in logo pixels
+  var baseY = (tb[1] + tb[3]) / 2 + capPx / 2;            // vertically centred in the original text box
+  function area(c) { var s = 0; for (var i = 0; i < c.length; i++) { var p = c[i], q = c[(i + 1) % c.length]; s += p[0] * q[1] - q[0] * p[1]; } return s / 2; }
   var textShapes = [], ox = 0;
   TEXT.split('').forEach(function (ch, i) {
-    var def = LETTERS[ch];
     ox += gapAt(i);
-    def.f(def.a).forEach(function (poly) {
-      textShapes.push(new THREE.Shape(poly.map(function (p) {
-        return new THREE.Vector2(tb[0] - cx + (ox + p[0]) * kx * H, (cy - tb[3]) + p[1] * H);
-      })));
-    });
-    ox += def.a;
+    if (ch !== ' ') {
+      var cs = F.glyphs[ch].contours.slice().sort(function (a, b) { return Math.abs(area(b)) - Math.abs(area(a)); });
+      var toP = function (p) { return new THREE.Vector2(tb[0] - cx + (ox + p[0] / CAP) * capPx, cy - (baseY - p[1] / CAP * capPx)); };
+      var shape = new THREE.Shape(cs[0].map(toP));
+      for (var k = 1; k < cs.length; k++) shape.holes.push(new THREE.Path(cs[k].map(toP)));
+      textShapes.push(shape);
+    }
+    ox += advOf(ch);
   });
   var textGeo = new THREE.ExtrudeGeometry(textShapes, {
     depth: 6, steps: 1, curveSegments: 1,
-    bevelEnabled: true, bevelThickness: 0.7, bevelSize: 0.42, bevelOffset: -0.42, bevelSegments: 2
+    bevelEnabled: true, bevelThickness: 0.35, bevelSize: 0.2, bevelOffset: -0.2, bevelSegments: 2
   });
   textGeo.translate(0, 0, -3);
 

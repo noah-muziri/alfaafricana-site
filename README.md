@@ -16,7 +16,7 @@ python3 -m http.server 8000
 - `js/topo.js`: generates the topographic contour-line backdrop (a made-up terrain contoured with marching squares) used behind every section.
 - Design language: warm paper and deep green-black sections stacked with rounded tops, Instrument Serif italic accents against Montserrat, a full-screen menu, a corner "free site survey" card, a scroll-reactive marquee and a scattered photo gallery. Inspired by the feel of landonorris.com, but all code, patterns and assets here are our own.
 - `js/logo3d.js`: the 3D logo. One fixed canvas; the logo glides between the `data-stage` boxes in the page (hero, about, stats, contact) and spins as you scroll.
-- `js/logo-path.js`: the outline of the real logo mark, traced from `images/alfa-logo.png` into vector loops so it can be extruded. The "ALFA AFRICANA" lettering is rebuilt from strokes (the source PNG is too small to trace cleanly), so it is a close match, not a copy.
+- `js/logo-path.js`: the outline of the real logo mark, traced from `images/alfa-logo.png` into vector loops so it can be extruded. The "ALFA AFRICANA" lettering uses real Montserrat Medium outlines (`js/logo-font.js`, SIL Open Font License), widely tracked to match the Alfa Royal logo lettering.
 - `js/i18n.js`: the EN / LG switch in the top bar. It swaps every text node using a dictionary keyed by the English text and remembers the choice. The Luganda is a first draft and should be reviewed by a native speaker. When you add or change English copy, add the matching entry here.
 - `vendor/three.min.js`: Three.js r128 (MIT).
 - `images/`: images from the current site.
