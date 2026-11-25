@@ -123,10 +123,10 @@
   function lin(hex) { return new THREE.Color(hex).convertSRGBToLinear(); }
   INK.convertSRGBToLinear();
 
-  // glossy blue acrylic face, polished teal-chrome edges, satin metal lettering
-  var faceMat = new THREE.MeshPhysicalMaterial({ color: lin(BLUE), metalness: 0.0, roughness: 0.42, clearcoat: 1, clearcoatRoughness: 0.04, envMapIntensity: 0.62, transparent: true });
-  var sideMat = new THREE.MeshStandardMaterial({ color: lin(TEAL), metalness: 0.95, roughness: 0.2, envMapIntensity: 1.4, transparent: true });
-  var textMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0.55, roughness: 0.34, clearcoat: 0.7, clearcoatRoughness: 0.1, envMapIntensity: 1.1, transparent: true });
+  // matte powder-coated finish: soft blue face, teal edges, flat lettering
+  var faceMat = new THREE.MeshPhysicalMaterial({ color: lin(BLUE), metalness: 0.0, roughness: 0.88, clearcoat: 0, envMapIntensity: 0.42, transparent: true });
+  var sideMat = new THREE.MeshStandardMaterial({ color: lin(0x2fb3a6), metalness: 0.05, roughness: 0.82, envMapIntensity: 0.5, transparent: true });
+  var textMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0.0, roughness: 0.85, clearcoat: 0, envMapIntensity: 0.55, transparent: true });
 
   // procedural photo-studio: a dark room with soft boxes, baked into a reflection map
   var envScene = new THREE.Scene();
@@ -154,7 +154,7 @@
   var scene = new THREE.Scene();
   scene.add(rig);
   scene.environment = envMap;
-  var key = new THREE.DirectionalLight(0xffffff, 1.3); key.position.set(-260, 340, 520); scene.add(key);
+  var key = new THREE.DirectionalLight(0xffffff, 0.95); key.position.set(-260, 340, 520); scene.add(key);
 
   // soft contact shadow under the floating logo
   var sc = document.createElement('canvas'); sc.width = sc.height = 128;
