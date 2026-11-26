@@ -4,6 +4,7 @@
 (function () {
   var stages = Array.prototype.slice.call(document.querySelectorAll('[data-stage]'));
   var canvas = document.getElementById('logo3d');
+  if (!stages.length) { if (canvas) canvas.style.display = 'none'; return; }
   var L = window.ALFA_LOGO;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 

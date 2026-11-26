@@ -13,9 +13,9 @@
   <meta property="og:image" content="images/alfa-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/hero-aerial.jpg">
-  <link rel="stylesheet" href="css/style.css?v=1795637606">
+  <link rel="stylesheet" href="css/style.css?v=1795724606">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alfa Africana","description":"Master distributor of ZKTeco and distributor of ASSA ABLOY; IT services and hardware in Kampala, Uganda. Part of the ALFA Group, established 1970.","telephone":"+256750500102","email":"info@alfaafricana.com","address":{"@type":"PostalAddress","streetAddress":"The Prism building, B-13 Kampala Road","addressLocality":"Kampala","addressCountry":"UG"}}</script>
 </head>
 <body>
@@ -187,7 +187,7 @@
     <div class="nav__inner">
       <a class="nav__logo" href="#home" aria-label="Alfa Africana, since 1970">
         <span class="brand__mark"><img src="images/alfa-logo.png" alt="" width="181" height="75"></span>
-        <span class="brand__t"><b>ALFA AFRICANA</b><i>SINCE 1970</i></span>
+        <span class="brand__t"><b>ALFA AFRICANA</b></span>
       </a>
       <nav class="nav__links" aria-label="Main">
         <a href="#about">About</a><a href="#partners">Partners</a><a href="#catalogue">Products</a><a href="#services">Services</a><a href="#benefits">Why us</a>
@@ -230,20 +230,36 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero" id="home" data-theme="dark">
+      <div class="wrap hero__top">
+        <p class="eyebrow rise" style="--d:0s"><b>IT &middot; Electronics &middot; Distribution</b><span class="eyebrow__line" aria-hidden="true"></span><span>Kampala, Uganda</span></p>
+        <h1 class="rise" id="heroH1" style="--d:0s"><span class="ln">The world builds the brands.</span> <span class="ln">Uganda trusts us to bring them home.</span> <em>Family-owned since 1970</em></h1>
+        <script>
+        /* Two headline stories, chosen at random on each visit (A: trust, C: love) */
+        (function () {
+          var r = Math.floor(Math.random() * 3);
+          if (r === 0) return;
+          var l = document.querySelectorAll('#heroH1 .ln');
+          if (r === 1) { l[0].textContent = 'We fell in love with Uganda.'; l[1].textContent = 'Fifty years on, we still are.'; }
+          else { l[0].textContent = 'Plugging Uganda in since 1970.'; l[1].textContent = 'Still family. Still here.'; }
+        })();
+        </script>
+      </div>
       <div class="wrap hero__grid">
         <div class="hero__text">
-          <h1 class="rise" style="--d:0s">Innovative IT Solutions, Built on <em>Legacy and Trust.</em></h1>
-          <p class="rise" style="--d:.12s">At Alfa Africana, we prioritize reliability, innovation, and a customer-centric approach, delivering solutions that enhance business performance and security.</p>
+          <p class="rise" style="--d:.12s">It began in our father’s time with TVs and fridges. Today it’s IT, security and access control, with ZKTeco and ASSA ABLOY behind us. Same family. Same promise: we’ll help you choose well. Webale, Uganda.</p>
           <p class="rise" style="--d:.24s"><a class="btn" href="#catalogue">Know more</a></p>
           <ul class="badges rise" style="--d:.36s" aria-label="Distribution partnerships">
             <li><b>Master Distributor</b> ZKTeco</li>
             <li><b>Distributor</b> ASSA ABLOY</li>
           </ul>
         </div>
-        <div class="stage" data-stage aria-hidden="true">
-        </div>
       </div>
       <div class="wrap">
+        <div class="strip-head rise" style="--d:.45s">
+          <span class="strip-head__t">What we supply</span>
+          <span class="strip-head__line" aria-hidden="true"></span>
+          <span class="strip-head__btns"><button type="button" data-strip="-1" aria-label="Previous">&larr;</button><button type="button" data-strip="1" aria-label="Next">&rarr;</button></span>
+        </div>
         <ul class="supply rise" style="--d:.5s" aria-label="What we supply">
           <li><a href="#catalogue"><img src="images/hero-biometrics.jpg" alt="Fingerprint on a biometric scanner" width="300" height="200" loading="lazy"><span>Biometrics &amp; smart ID</span></a></li>
           <li><a href="#catalogue"><img src="images/hero-turnstile.jpg" alt="Stainless steel turnstiles with green status lights" width="300" height="200" loading="lazy"><span>Access control</span></a></li>
@@ -534,8 +550,9 @@
   <script src="vendor/three.min.js"></script>
   <script src="js/logo-path.js?v=1795637606"></script>
   <script src="js/logo-font.js?v=1795637606"></script>
-  <script src="js/logo3d.js?v=1795637606"></script>
+  <script src="js/logo3d.js?v=1795722252"></script>
   <script src="js/main.js?v=1795637606"></script>
-  <script src="js/i18n.js?v=1795637606"></script>
+  <script src="js/cursor.js?v=1795722094"></script>
+  <script src="js/i18n.js?v=1795724606"></script>
 </body>
 </html>
