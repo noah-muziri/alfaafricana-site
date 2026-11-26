@@ -1,6 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>
+    /* Always open at the top: no browser scroll-restore, and in-page links scroll without leaving #section in the address bar */
+    (function () {
+      try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+      function clean() { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+      function top() { if (location.hash) clean(); window.scrollTo({ top: 0, behavior: 'instant' }); }
+      top();
+      window.addEventListener('pageshow', top);
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+        var id = a.getAttribute('href').slice(1), t = id && document.getElementById(id);
+        if (!t) return;
+        e.preventDefault();
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        clean();
+      });
+    })();
+  </script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alfa Africana | ZKTeco Master Distributor &amp; ASSA ABLOY Distributor, Kampala</title>
