@@ -653,3 +653,12 @@ html[lang="lg"] .hero h1 { font-size: clamp(30px, 4.4vw, 70px); }
 .hero__top .eyebrow span:last-child { white-space: nowrap; }
 @media (max-width: 900px) { .hero h1 { font-size: clamp(28px, 8.4vw, 52px); } }
 @media (max-width: 900px) { .hero__top .eyebrow { flex-wrap: wrap; gap: 8px 10px; } .hero__top .eyebrow span:last-child { white-space: normal; } .eyebrow__line { display: none; } .hero__top .eyebrow b { white-space: normal; } }
+
+/* First screen = exactly one viewport; the product strip is its own band below */
+.hero { min-height: 100svh; justify-content: center; gap: 0; padding-top: calc(var(--nav-h) + 24px); padding-bottom: 40px; }
+.supply-band { background: linear-gradient(180deg, #050e26, #071a3a); padding: 56px 0 72px; position: relative; z-index: 2; }
+.supply-band > .wrap { width: auto; margin-left: max(24px, calc((100vw - 1180px) / 2)); margin-right: 0; }
+.supply-band .strip-head { margin-top: 0; }
+@media (max-width: 900px) { .supply-band { padding: 36px 0 48px; } .supply-band > .wrap { margin-left: 24px; width: calc(100vw - 24px); } }
+.hero h1 { margin-bottom: 28px; }
+.hero__top { margin-bottom: 0; }

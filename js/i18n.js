@@ -28,6 +28,7 @@
     'We fell in love with Uganda.': 'Twayagala Uganda.',
     'Fifty years on, we still are.': 'Emyaka amakumi ataano oluvannyuma, tukyakagala.',
     'Family-owned since 1970': 'Bizinensi y’amaka okuva mu 1970',
+    'Alfa Group · Since 1970': 'Alfa Group · Kuva mu 1970',
     'IT · Electronics · Distribution': 'IT · Eby’amasannyalaze · Okugabanya',
     'Kampala, Uganda': 'Kampala, Uganda',
 
