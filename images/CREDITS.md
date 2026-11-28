@@ -21,3 +21,9 @@ Why Us section (Unsplash):
 - why-globe.jpg: Kyle Glenn, https://unsplash.com/photos/nXt5HtLmlgE
 - why-claims.jpg: Jakub Żerdzicki, https://unsplash.com/photos/QI6NLgN5XnM
 - why-sourcing.jpg: CHUTTERSNAP, https://unsplash.com/photos/BNBA1h-NgdY
+- sec-camera.jpg: Michał Jakubowski, https://unsplash.com/photos/oQD9uq4Rd4I
+- sec-smartlock.jpg: Sebastian Scholz (Nuki), https://unsplash.com/photos/IJkSskfEqrM
+- cat-tv.jpg: Caroline Badran, https://unsplash.com/photos/prIf3TI-U54
+- cat-fridge.jpg: Lisa Anna, https://unsplash.com/photos/ZkWMfHPNWpw
+- cat-washer.jpg: PlanetCare, https://unsplash.com/photos/5cpBWEl6y6c
+- cat-ai.jpg: Immo Wegmann, https://unsplash.com/photos/w69Z8K-HGQU

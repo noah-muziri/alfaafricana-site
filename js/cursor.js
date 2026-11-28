@@ -10,9 +10,9 @@
     window.addEventListener('mousemove', function (e) { x = e.clientX; y = e.clientY; c.classList.add('on'); }, { passive: true });
     document.addEventListener('mouseleave', function () { c.classList.remove('on'); });
     document.addEventListener('mouseover', function (e) {
-      var t = e.target.closest && e.target.closest('a,button,.supply a,input,textarea');
+      var t = e.target.closest && e.target.closest('a,button,input,textarea');
       c.classList.toggle('big', !!t);
-      c.classList.toggle('view', !!(e.target.closest && e.target.closest('.supply a')));
+      c.classList.toggle('view', !!(e.target.closest && e.target.closest('.pn:not(.is-active) a')));
     });
     (function loop() { cx += (x - cx) * 0.2; cy += (y - cy) * 0.2; c.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; requestAnimationFrame(loop); })();
   }
@@ -31,4 +31,17 @@
     strip.addEventListener('click', function (e) { if (moved > 6) e.preventDefault(); }, true);
     strip.addEventListener('dragstart', function (e) { e.preventDefault(); });
   }
+})();
+
+/* Product panels: hover, focus or tap opens one; a second tap follows the link */
+(function () {
+  var ps = document.querySelectorAll('.panels .pn');
+  if (!ps.length) return;
+  function open(p) { ps.forEach(function (x) { x.classList.toggle('is-active', x === p); }); }
+  ps.forEach(function (p) {
+    var a = p.querySelector('a');
+    p.addEventListener('mouseenter', function () { if (window.matchMedia('(hover:hover)').matches) open(p); });
+    a.addEventListener('focus', function () { open(p); });
+    a.addEventListener('click', function (e) { if (!p.classList.contains('is-active')) { e.preventDefault(); open(p); } });
+  });
 })();
